@@ -1,0 +1,263 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">    
+	<div id="quick-search-bar">
+		<div class="container-fluid w-90">
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10 text-center">
+					<div class="card my-5 py-5">
+						<div class="card-body">
+							<form>
+								<div class="row">
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetLocation">Dokąd chcesz jechać?</label>
+										<input class="form-control" id="targetLocation" type="text"/>
+									</div>
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetDate">Kiedy?</label>
+										<input class="form-control" id="targetDate" type="text"/>
+									</div>
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetPeople">Ile osób?</label>
+										<input class="form-control" id="targetPeople" type="text"/>
+									</div>
+									<div class="col-3 d-flex flex-column justify-content-end">
+										<button type="button" class="btn btn-yellow fw-bolder" >Szukaj</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="recommended-bar">
+		<div class="container-fluid w-90">
+			<div class="row pt-5 pb-5">
+				<div class="col-12 display-6 text-start">Polecamy</div>
+			</div>
+			<div class="row pb-5">
+				<div id="recommended-carousel" class="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="card" id="offerCard">
+								<img src="~/Content/example1.png" class="card-img-top img-fluid" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">Lorem ipsum</h4>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+									<h3 class="card-text text-end ">2000 zł/os</h3>
+									<a href="#" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card" id="offerCard">
+								<img src="~/Content/example2.png" class="card-img-top img-fluid" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">Lorem ipsum</h4>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+									<h3 class="card-text text-end ">2000 zł/os</h3>
+									<a href="#" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card" id="offerCard">
+								<img src="~/Content/example3.png" class="card-img-top img-fluid" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">Lorem ipsum</h4>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+									<h3 class="card-text text-end ">2000 zł/os</h3>
+									<a href="#" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card" id="offerCard">
+								<img src="~/Content/example1.png" class="card-img-top img-fluid" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">Lorem ipsum</h4>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+									<h3 class="card-text text-end ">2000 zł/os</h3>
+									<a href="#" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card" id="offerCard">
+								<img src="~/Content/example2.png" class="card-img-top img-fluid" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">Lorem ipsum</h4>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+									<h3 class="card-text text-end ">2000 zł/os</h3>
+									<a href="#" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#recommended-carousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#recommended-carousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="false"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="recommended-countries-bar">
+		<div class="container-fluid w-90">
+			<div class="row pt-5 pb-5">
+				<div class="col-12 display-6 text-start">Popularne kierunki</div>
+			</div>
+			<div class="row pb-5">
+				<div id="recommended-countries-carousel" class="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleDominicana.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleEgypt.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleGreece.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleItaly.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleMexico.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleTurkey.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Content/exampleMexico.png" class="card-img img-fluid" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow border-3 rounded-3">
+										<div class="fw-bolder my-2">Custom heading</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+					 </div>
+					 <button class="carousel-control-prev" type="button" data-bs-target="#recommended-countries-carousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#recommended-countries-carousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="false"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="blog-bar">
+		<div class="container-fluid w-90">
+			<div class="row pt-5 pb-5">
+				<div class="col-12 display-6 text-start">Blog podróżny</div>
+			</div>
+			<div class="row pb-5">
+				<div class="col-md-4 col-6">
+					<div class="card" id="blogCard">
+						<a href="#" class="stretched-link"></a>
+						<img src="~/Content/exampleBlog1.png" class="card-img-top img-fluid" alt="...">
+						<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end p-0">
+							<div class="card p-0 m-0" id="blogCard">                                
+								<img src="~/Content/overlayBlog.png" class="card-img-bottom img-fluid" alt="...">
+								<div class="card-img-overlay"> 
+									<h5 class="card-title fw-bolder">Lorem ipsum 17.05.2024</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-6">
+					<div class="card" id="blogCard">
+						<a href="#" class="stretched-link"></a>
+						<img src="~/Content/exampleBlog1.png" class="card-img-top img-fluid" alt="...">
+						<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end p-0">
+							<div class="card p-0 m-0" id="blogCard">                                
+								<img src="~/Content/overlayBlog.png" class="card-img-bottom img-fluid" alt="...">
+								<div class="card-img-overlay"> 
+									<h5 class="card-title fw-bolder">Lorem ipsum 18.05.2024</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-none d-md-block">
+					<div class="card" id="blogCard">
+						<a href="#" class="stretched-link"></a>
+						<img src="~/Content/exampleBlog1.png" class="card-img-top img-fluid" alt="...">
+						<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end p-0">
+							<div class="card p-0 m-0" id="blogCard">                                
+								<img src="~/Content/overlayBlog.png" class="card-img-bottom img-fluid" alt="...">
+								<div class="card-img-overlay"> 
+									<h5 class="card-title fw-bolder">Lorem ipsum 19.05.2024</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</div>

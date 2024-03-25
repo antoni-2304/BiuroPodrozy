@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - BiuroPodrozy.PortalWWW</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/BiuroPodrozy.PortalWWW.styles.css" asp-append-version="true" />
+	@*Fonts *@
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header class="sticky-top">
+		<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+			<div class="container-fluid w-90">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand me-md-2 me-0" asp-area="" asp-controller="Home" asp-action="Index">
+					<img class="icon img-fluid" src="~/Content/logo.png" id="logo"/>
+				</a>
+
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item me-3">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Oferta</a>
+						</li>
+						<li class="nav-item me-3">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Promocje</a>
+						</li>
+						<li class="nav-item me-3">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Czartery</a>
+						</li>
+						<li class="nav-item me-3">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Last-minute</a>
+						</li>
+					</ul>
+
+					<ul class="navbar-nav d-flex">
+						<li class="nav-item me-4">
+							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index">
+								<img class="icon" src="~/Content/contactIcon.png"/>
+							</a>
+						</li>
+						<li class="nav-item me-4">
+							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Privacy">
+								<img class="icon" src="~/Content/userIcon.png"/>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Privacy">
+								<img class="icon" src="~/Content/searchIcon.png"/>
+							</a>
+						</li>
+					</ul>
+				</div>            
+			</div>
+		</nav>
+	</header>
+
+	<div class="container-fluid p-0">
+		<main role="main" class="">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="footer text-center text-white">
+		<div class="container-fluid w-90">
+			<div class="row">
+				<div class="col-md-2 col-6">
+					<div class="d-flex flex-column h-100 align-items-center justify-content-center">
+						<p class="my-3"><img class="icon me-3 " src="~/Content/contactIconWhite.png" id="logo"/> 1234567891 </p>
+						<p class="my-3"><img class="icon me-3" src="~/Content/emailIconWhite.png" id="logo"/> cba@xyz.com </p>
+						<p class="my-3"><img class="icon me-3" src="~/Content/officeIconWhite.png" id="logo"/> Biuro Podróży </p>
+					</div>
+				</div>
+				<div class="col-md-8 col-12 order-md-1 order-2 text-wrap">
+					<div class="row align-items-center">
+						<div class="col-md-3 col-6">
+							<div class="">
+								<p class="my-4 fs-5">O nas </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="">
+								<p class="my-4 fs-5">Dla klientów </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="">
+								<p class="my-4 fs-5">Zasady korzystania </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="">
+								<p class="my-4 fs-5">Usługi dodatkowe </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+								<p class="my-4">Lorem ipsum </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 col-6 order-md-2 order-1">
+					<div class="d-flex flex-column h-100 align-items-center justify-content-center">
+						<p class="my-3 fs-5">Znajdź nas na</p>
+						<p class="my-2"><img class="icon" src="~/Content/facebookIconWhite.png" id="logo"/></p>
+						<p class="my-2"><img class="icon" src="~/Content/instagramIconWhite.png" id="logo"/></p>
+						<p class="my-2"><img class="icon" src="~/Content/youtubeIconWhite.png" id="logo"/></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+		<script src="~/js/carousel.js" asp-append-version="true"></script>
+
+</body>
+</html>

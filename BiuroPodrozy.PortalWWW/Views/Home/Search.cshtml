@@ -1,0 +1,288 @@
+﻿@{
+	ViewData["Title"] = "Wyszukaj";
+}
+
+<div class="">
+	<div id="quick-search-bar">
+		<div class="container-fluid w-90">
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10 text-center">
+					<div class="card my-5 py-5">
+						<div class="card-body">
+							<form>
+								<div class="row">
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetLocation">Dokąd chcesz jechać?</label>
+										<input class="form-control" id="targetLocation" type="text" />
+									</div>
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetDate">Kiedy?</label>
+										<input class="form-control" id="targetDate" type="text" />
+									</div>
+									<div class="col-3 border-end d-flex flex-column justify-content-end">
+										<label class="form-label fw-bold" for="targetPeople">Ile osób?</label>
+										<input class="form-control" id="targetPeople" type="text" />
+									</div>
+									<div class="col-3 d-flex flex-column justify-content-end">
+										<button type="button" class="btn btn-yellow fw-bolder">Szukaj</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="search-main">
+		<div class="container-fluid w-90">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="display-6 pt-5 text-start fw-bolder">Filtry</div>
+					<hr class="my-4" />
+					<div class="accordion accordion-flush mb-3" id="filter-accordion">
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-1" aria-expanded="true" aria-controls="filter-accordion-1">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-1">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-2" aria-expanded="true" aria-controls="filter-accordion-2">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-2">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-3" aria-expanded="true" aria-controls="filter-accordion-3">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-3">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-4" aria-expanded="true" aria-controls="filter-accordion-4">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-4">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-5" aria-expanded="true" aria-controls="filter-accordion-5">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-5">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="display-6 pt-5 pb-5 text-start fw-bolder">Wakacje w LOREM IPSUM</div>
+					<div class="card mb-3 rounded-5 " id="searchCard">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="~/Content/exampleGreecePlace1.png" class="img-fluid left-fit rounded" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body p-4">
+									<h2 class="card-title">
+										<p class="d-inline pe-4">Lorem ipsum</p>
+										<img src="~/Content/5starsIcon.png" class="icon w-25 h-25" />
+									</h2>
+									<p class="card-text py-4 fs-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									<h3 class="card-text text-end">2000 zł/os</h3>
+									<div class="card-text text-end">
+										<a href="#" class="btn btn-yellow stretched-link">Szczegóły</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card mb-3 rounded-5 " id="searchCard">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="~/Content/exampleGreecePlace2.png" class="img-fluid left-fit rounded" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body p-4">
+									<h2 class="card-title">
+										<p class="d-inline pe-4">Lorem ipsum</p>
+										<img src="~/Content/5starsIcon.png" class="icon w-25 h-25" />
+									</h2>
+									<p class="card-text py-4 fs-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									<h3 class="card-text text-end">2000 zł/os</h3>
+									<div class="card-text text-end">
+										<a href="#" class="btn btn-yellow stretched-link">Szczegóły</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card mb-3 rounded-5 " id="searchCard">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="~/Content/exampleGreecePlace3.png" class="img-fluid left-fit rounded" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body p-4">
+									<h2 class="card-title">
+										<p class="d-inline pe-4">Lorem ipsum</p>
+										<img src="~/Content/5starsIcon.png" class="icon w-25 h-25" />
+									</h2>
+									<p class="card-text py-4 fs-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									<h3 class="card-text text-end">2000 zł/os</h3>
+									<div class="card-text text-end">
+										<a href="#" class="btn btn-yellow stretched-link">Szczegóły</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</div>
