@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - BiuroPodrozy.PortalWWW</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+	<link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/BiuroPodrozy.PortalWWW.styles.css" asp-append-version="true" />
 	@*Fonts *@
@@ -23,39 +25,25 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<a class="navbar-brand me-md-2 me-0" asp-area="" asp-controller="Home" asp-action="Index">
-					<img class="icon img-fluid" src="~/Content/logo.png" id="logo"/>
+					<img class="icon img-fluid" src="~/Assets/Images/Icons/logo.png" id="logo"/>
 				</a>
 
 				<div class="collapse navbar-collapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item me-3">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Oferta</a>
-						</li>
-						<li class="nav-item me-3">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Promocje</a>
-						</li>
-						<li class="nav-item me-3">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Czartery</a>
-						</li>
-						<li class="nav-item me-3">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Last-minute</a>
-						</li>
-					</ul>
 
+					@await Component.InvokeAsync("NavbarLinksComponent")
+					
 					<ul class="navbar-nav d-flex">
+						@if (User.Identity.IsAuthenticated)
+						{
+							<li class="nav-item me-4">
+                                <a class="nav-brand" asp-area="" asp-controller="Auth" asp-action="Logout">
+									<i class="bi bi-box-arrow-left"></i>
+                                </a>
+                            </li>
+						}
 						<li class="nav-item me-4">
-							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index">
-								<img class="icon" src="~/Content/contactIcon.png"/>
-							</a>
-						</li>
-						<li class="nav-item me-4">
-							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Privacy">
-								<img class="icon" src="~/Content/userIcon.png"/>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Privacy">
-								<img class="icon" src="~/Content/searchIcon.png"/>
+							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="UserDetails">
+								<i class="bi bi-person-fill"></i>
 							</a>
 						</li>
 					</ul>
@@ -75,9 +63,9 @@
 			<div class="row">
 				<div class="col-md-2 col-6">
 					<div class="d-flex flex-column h-100 align-items-center justify-content-center">
-						<p class="my-3"><img class="icon me-3 " src="~/Content/contactIconWhite.png" id="logo"/> 1234567891 </p>
-						<p class="my-3"><img class="icon me-3" src="~/Content/emailIconWhite.png" id="logo"/> cba@xyz.com </p>
-						<p class="my-3"><img class="icon me-3" src="~/Content/officeIconWhite.png" id="logo"/> Biuro Podróży </p>
+						<p class="my-3"><i class="bi bi-telephone-fill icon me-3" id="logo"></i> 1234567891 </p>
+						<p class="my-3"><i class="bi bi-envelope-fill icon me-3" id="logo"></i> cba@xyz.com </p>
+						<p class="my-3"><i class="bi bi-buildings-fill icon me-3" id="logo"></i> Biuro Podróży </p>
 					</div>
 				</div>
 				<div class="col-md-8 col-12 order-md-1 order-2 text-wrap">
@@ -127,9 +115,9 @@
 				<div class="col-md-2 col-6 order-md-2 order-1">
 					<div class="d-flex flex-column h-100 align-items-center justify-content-center">
 						<p class="my-3 fs-5">Znajdź nas na</p>
-						<p class="my-2"><img class="icon" src="~/Content/facebookIconWhite.png" id="logo"/></p>
-						<p class="my-2"><img class="icon" src="~/Content/instagramIconWhite.png" id="logo"/></p>
-						<p class="my-2"><img class="icon" src="~/Content/youtubeIconWhite.png" id="logo"/></p>
+						<p class="my-2"><i class="bi bi-facebook icon" id="logo"></i></p>
+						<p class="my-2"><i class="bi bi-instagram icon" id="logo"></i></p>
+						<p class="my-2"><i class="bi bi-youtube icon" id="logo"></i></p>
 					</div>
 				</div>
 			</div>
@@ -140,8 +128,10 @@
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/js/carousel.js" asp-append-version="true"></script>
+	<script src="~/js/filter.js" asp-append-version="true"></script>
+
 	@await RenderSectionAsync("Scripts", required: false)
-		<script src="~/js/carousel.js" asp-append-version="true"></script>
 
 </body>
 </html>

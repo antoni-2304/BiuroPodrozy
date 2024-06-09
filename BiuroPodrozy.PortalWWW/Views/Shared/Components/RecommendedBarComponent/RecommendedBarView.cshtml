@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BiuroPodrozy.Data.TripDTO>
+
+<div id="recommended-bar">
+	<div class="container-fluid w-90">
+		<div class="row pt-5 pb-5">
+			<div class="col-12 display-6 text-start">Polecamy</div>
+		</div>
+		<div class="row pb-5">
+			<div id="recommended-carousel" class="carousel">
+				<div class="carousel-inner">
+					@foreach (var item in Model)
+					{
+						<div class="carousel-item active">
+							<div class="card" id="offerCard">
+								<img src="~/Assets/Images/@item.Photos.First()" class="card-img-top img-fluid" style="border-radius: 20px" alt="...">
+								<div class="card-body">
+									<h4 class="card-title">@item.TripName</h4>
+									<p class="card-text three-line-ellipsis">@item.TripDescription</p>
+									<h3 class="card-text text-end">@item.TripCostPerAdult zł/os</h3>
+									<a asp-controller="Search" asp-action="Details" asp-route-id="@item.IdTrip" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+					}				
+				</div>	
+				<button class="carousel-control-prev" type="button" data-bs-target="#recommended-carousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#recommended-carousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="false"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

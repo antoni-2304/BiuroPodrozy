@@ -1,0 +1,33 @@
+﻿<div id="quick-search-bar">
+	<div class="container-fluid w-90">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10 text-center">
+				<div class="card my-5 py-5">
+					<div class="card-body">
+						<form method="get" asp-controller="Search" asp-action="Index">
+							<div class="row">
+								<div class="col-3 border-end d-flex flex-column justify-content-end">
+									<label class="form-label fw-bold" for="targetLocation">Dokąd chcesz jechać?</label>
+									<input class="form-control" name="targetLocation" id="targetLocation" type="text" />
+								</div>
+								<div class="col-3 border-end d-flex flex-column justify-content-end">
+									<label class="form-label fw-bold" for="targetDate">Kiedy?</label>
+									<input class="form-control" name="targetDate" id="targetDate" type="text" />
+								</div>
+								<div class="col-3 border-end d-flex flex-column justify-content-end">
+									<label class="form-label fw-bold" for="targetPeople">Ile osób?</label>
+									<input class="form-control" name="targetPeople" id="targetPeople" type="text" />
+								</div>
+								<div class="col-3 d-flex flex-column justify-content-end">
+									<input type="submit" class="btn btn-yellow fw-bolder" value="Szukaj"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</div>

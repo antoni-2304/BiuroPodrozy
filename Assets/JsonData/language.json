@@ -1,0 +1,162 @@
+[
+    {
+      "LanguageAbbr": "ALB",
+      "Language": "albański"
+    },
+    {
+      "LanguageAbbr": "BEL",
+      "Language": "białoruski"
+    },
+    {
+      "LanguageAbbr": "BUL",
+      "Language": "bułgarski"
+    },
+    {
+      "LanguageAbbr": "CHI",
+      "Language": "chiński"
+    },
+    {
+      "LanguageAbbr": "CZE",
+      "Language": "czeski"
+    },
+    {
+      "LanguageAbbr": "DAN",
+      "Language": "duński"
+    },
+    {
+      "LanguageAbbr": "DUT",
+      "Language": "holenderski"
+    },
+    {
+      "LanguageAbbr": "ENG",
+      "Language": "angielski"
+    },
+    {
+      "LanguageAbbr": "EPO",
+      "Language": "esperanto"
+    },
+    {
+      "LanguageAbbr": "EST",
+      "Language": "estoński"
+    },
+    {
+      "LanguageAbbr": "FIN",
+      "Language": "fiński"
+    },
+    {
+      "LanguageAbbr": "FRE",
+      "Language": "francuski"
+    },
+    {
+      "LanguageAbbr": "GER",
+      "Language": "niemiecki"
+    },
+    {
+      "LanguageAbbr": "GRE",
+      "Language": "grecki"
+    },
+    {
+      "LanguageAbbr": "HEB",
+      "Language": "hebrajski"
+    },
+    {
+      "LanguageAbbr": "HUN",
+      "Language": "węgierski"
+    },
+    {
+      "LanguageAbbr": "ICE",
+      "Language": "islandzki"
+    },
+    {
+      "LanguageAbbr": "ITA",
+      "Language": "włoski"
+    },
+    {
+      "LanguageAbbr": "JPN",
+      "Language": "japoński"
+    },
+    {
+      "LanguageAbbr": "KOR",
+      "Language": "koreański"
+    },
+    {
+      "LanguageAbbr": "LAT",
+      "Language": "łaciński"
+    },
+    {
+      "LanguageAbbr": "LAV",
+      "Language": "łotewski"
+    },
+    {
+      "LanguageAbbr": "LIT",
+      "Language": "litewski"
+    },
+    {
+      "LanguageAbbr": "MAC",
+      "Language": "macedoński"
+    },
+    {
+      "LanguageAbbr": "MUL",
+      "Language": "wiele języków"
+    },
+    {
+      "LanguageAbbr": "NOR",
+      "Language": "norweski"
+    },
+    {
+      "LanguageAbbr": "POL",
+      "Language": "polski"
+    },
+    {
+      "LanguageAbbr": "POR",
+      "Language": "portugalski"
+    },
+    {
+      "LanguageAbbr": "RUM",
+      "Language": "rumuński"
+    },
+    {
+      "LanguageAbbr": "RUS",
+      "Language": "rosyjski"
+    },
+    {
+      "LanguageAbbr": "SCC",
+      "Language": "serbski"
+    },
+    {
+      "LanguageAbbr": "SCR",
+      "Language": "chorwacki"
+    },
+    {
+      "LanguageAbbr": "SLA",
+      "Language": "starocerkiewno-słowiański"
+    },
+    {
+      "LanguageAbbr": "SLO",
+      "Language": "słowacki"
+    },
+    {
+      "LanguageAbbr": "SLV",
+      "Language": "słoweński"
+    },
+    {
+      "LanguageAbbr": "SPA",
+      "Language": "hiszpański"
+    },
+    {
+      "LanguageAbbr": "SWE",
+      "Language": "szwedzki"
+    },
+    {
+      "LanguageAbbr": "TUR",
+      "Language": "turecki"
+    },
+    {
+      "LanguageAbbr": "UKR",
+      "Language": "ukraiński"
+    },
+    {
+      "LanguageAbbr": "UND",
+      "Language": "nieznany"
+    }
+  ]

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BiuroPodrozy.Data.TripDTO>
+
+@foreach (var item in Model)
+{
+	<div class="card mb-3 rounded-5 " id="searchCard">
+		<div class="row g-0">
+			<div class="col-md-4">
+				<img src="~/Assets/Images/@item.Photos.First()" class="img-fluid left-fit" style="border-radius: 15px" alt="...">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body p-4">
+					<h2 class="card-title">
+						<p class="d-inline pe-4">@item.TripName</p>
+						<img src="~/Assets/Images/Icons/5starsIcon.png" class="icon w-25 h-25" />
+					</h2>
+					<p class="card-text py-4 fs-5 three-line-ellipsis">@item.TripDescription</p>
+					<h3 class="card-text text-end">@item.TripCostPerAdult /os</h3>
+					<div class="card-text text-end">
+						<a asp-controller="Search" asp-action="Details" asp-route-id="@item.IdTrip" class="btn btn-yellow stretched-link">Szczegóły</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}

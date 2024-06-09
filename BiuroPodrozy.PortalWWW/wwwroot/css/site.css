@@ -12,7 +12,7 @@
     }
 
     .carousel-inner {
-        display: flex;
+        display: inline-flex;
     }
 
     #recommended-bar .carousel-item {
@@ -34,13 +34,16 @@
     }
 
     .carousel-inner {
-        display: flex;
     }
 
     #recommended-countries-bar .carousel-item {
         margin-right: 0;
         flex: 0 0 50%;
         display: block;
+    }
+
+    .card .img-wrapper {
+        height: 17em;
     }
 }
 
@@ -157,7 +160,6 @@ footer {
     height: 100%;
     object-fit: cover;
     object-position: center;
-
     border-radius: 20px;
 }
 
@@ -181,4 +183,20 @@ footer {
 
 #blog-bar {
     font-family: 'Poppins', sans-serif;
+}
+
+
+/* Text css*/
+
+.three-line-ellipsis {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+i {
+    font-size: 2rem;
+    color: black;
 }

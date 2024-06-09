@@ -1,0 +1,130 @@
+﻿@model IEnumerable<BiuroPodrozy.Data.TripDTO>
+
+@{
+	ViewData["Title"] = "Wyszukaj";
+}
+
+<div class="">
+	@await Component.InvokeAsync("CardQuickSearchComponent")
+	<div id="search-main">
+		<div class="container-fluid w-90">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="display-6 pt-5 text-start fw-bolder">Filtry</div>
+					<hr class="my-4" />
+					<div class="accordion accordion-flush mb-3" id="filter-accordion">
+						@await Component.InvokeAsync("FilterComponent")					
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-2" aria-expanded="true" aria-controls="filter-accordion-2">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-2">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-3" aria-expanded="true" aria-controls="filter-accordion-3">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-3">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#filter-accordion-4" aria-expanded="true" aria-controls="filter-accordion-4">
+									<div class="text-start fw-bolder fs-5">LOREM IPSUM</div>
+								</button>
+							</h2>
+							<div class="accordion-collapse collapse show" id="filter-accordion-4">
+								<div class="accordion-body px-0">
+									<ul class="list-group list-group-flush fs-5">
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+										<li class="list-group-item">
+											<input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+											Lorem ipsum
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="display-6 pt-5 pb-5 text-start fw-bolder">Znalezione oferty</div>
+					<div id="searchCards">
+						@await Component.InvokeAsync("SearchCardComponent", Model)		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

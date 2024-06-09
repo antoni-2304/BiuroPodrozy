@@ -1,0 +1,56 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.DeleteItemViewModel<BiuroPodrozy.Data.TripDTO>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripCode)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripCode)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripCostPerAdult)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripCostPerAdult)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripCostPerChild)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripCostPerChild)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripType)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripType)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.HotelName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.HotelName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.TripDescription)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.TripDescription)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.DestinationCityName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.DestinationCityName)
+    </dd>
+
+</dl>

@@ -1,0 +1,51 @@
+﻿@page "/more"
+@inherits MvvmComponentBase<LogoutViewModel>
+
+<div class="d-flex justify-center">
+    <MudLink Href="/">
+        <MudImage  Src="Assets/Images/Icons/logo.png">
+        </MudImage>
+    </MudLink>
+</div>
+
+    <MudDivider DividerType="DividerType.FullWidth" Class="my-4"></MudDivider>
+    <MudContainer MaxWidth="MaxWidth.Large" Class="d-flex justify-center">
+        <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Class="my-8">
+            <MudIcon Icon="@Icons.Material.Rounded.WbSunny" Size="Size.Large" Color="Color.Secondary" />
+            <AuthorizeView>
+                <NotAuthorized>
+                <MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Secondary" FullWidth="true" Class="rounded-pill" Href="/login">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Zaloguj się</MudText>
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/register">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Zarejestruj się</MudText>
+                </MudButton>
+                </NotAuthorized>
+                <Authorized>
+                    <MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Secondary" FullWidth="true" Class="rounded-pill" OnClick="ViewModel.Logout">
+                        <MudText Color="Color.Primary" Typo="Typo.button">Wyloguj się</MudText>
+                    </MudButton>
+                </Authorized>
+            </AuthorizeView>
+
+            <MudDivider></MudDivider>
+
+            <MudButton Variant="Variant.Outlined" DisableElevation="true" FullWidth="true" StartIcon="@Icons.Material.Outlined.ContactPhone" Href="/info">
+                <MudText Color="Color.Primary" Typo="Typo.button">Kontakt i informacje</MudText>
+            </MudButton>
+            <AuthorizeView>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" FullWidth="true" StartIcon="@Icons.Material.Filled.AdminPanelSettings" Href="/admin">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Panel administatora</MudText>
+                </MudButton>
+            </AuthorizeView>
+            <MudButton Variant="Variant.Outlined" DisableElevation="true" FullWidth="true" StartIcon="@Icons.Material.Outlined.WbSunny" Href="/weather">
+                <MudText Color="Color.Primary" Typo="Typo.button">Pogoda</MudText>
+            </MudButton>
+
+        </MudStack>
+    </MudContainer>
+
+
+@code {
+
+}

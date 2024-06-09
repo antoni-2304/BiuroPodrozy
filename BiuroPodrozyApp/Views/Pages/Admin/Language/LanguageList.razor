@@ -1,0 +1,47 @@
+﻿@page "/admin/language/list"
+@inherits MvvmComponentBase<LanguageViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Języki</MudText>
+        </MudItem>
+        <MudItem xs="2" Class="d-flex justify-start align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Href="/admin/language/add"></MudIconButton>
+        </MudItem>
+    </MudGrid>
+    @if (!ViewModel.Models.Any())
+    {
+        <p><em>Loading...</em></p>
+    } else {
+    <MudStack Class="my-8">
+        <AuthorizeView>
+            <Authorized>
+                <MudExpansionPanels>
+                    @foreach (var item in ViewModel.Models)
+                    {
+                            <MudExpansionPanel Text="@item.LanguageName">
+                            <p>Skrót języka:  @item.AbbrLanguageName</p>
+
+                            <div Class="d-flex justify-end">
+                                <MudButtonGroup Color="Color.Primary" Variant="Variant.Filled" Class="mt-4">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" Href="@($"/admin/language/edit/{item.IdLanguage}")"></MudIconButton>
+                                    <MudIconButton Icon="@Icons.Material.Filled.DeleteOutline" Size="Size.Small" Href="@($"/admin/language/delete/{item.IdLanguage}")"></MudIconButton>
+                                </MudButtonGroup>
+                            </div>
+                        </MudExpansionPanel>
+                    }
+                </MudExpansionPanels>
+            </Authorized>
+        </AuthorizeView>
+    </MudStack>
+    }
+</MudContainer>
+
+@code {
+
+}

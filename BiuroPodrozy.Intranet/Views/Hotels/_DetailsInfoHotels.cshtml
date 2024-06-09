@@ -1,0 +1,90 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.DetailsInfoViewModel<BiuroPodrozy.Data.HotelDTO>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Hotel - Szczegóły</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.HotelName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.HotelName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.HotelStars)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.HotelStars)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.HotelRating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.HotelRating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.HotelPricePerUnit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.HotelPricePerUnit)
+        </dd>
+
+        <hr />
+        <h4>Sekcja adresowa</h4>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Street)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Street)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.HomeNr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.HomeNr)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.CityName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.CityName)
+        </dd>
+
+        <hr />
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Latitude)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Latitude)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Longitude)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Longitude)
+        </dd>
+
+    </dl>
+    <hr />
+</div>

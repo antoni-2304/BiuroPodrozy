@@ -1,0 +1,37 @@
+﻿@page "/register"
+@layout EmptyLayout
+@inherits MvvmComponentBase<RegisterViewModel>
+
+
+<div style="background-image: url(/Assets/Images/Photos/loginImage.png); margin: 0; padding: 0; background-size:cover; height: 100vh;">
+    <div class="d-flex justify-center">
+        <MudImage Src="Assets/Images/Icons/logo.png" Class="mt-6 mb-6"></MudImage>
+    </div>
+    <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center">
+        <MudPaper Class="mt-8 mb-8 rounded-xl" Outlined="true">
+            <EditForm Model="ViewModel.RegisterModel" OnValidSubmit="ViewModel.Submit()" OnInvalidSubmit="ViewModel.Submit()">
+                <MudText Class="d-flex justify-center mt-6 mb-6" Typo="Typo.h5">Zarejestruj się</MudText>
+                <MudTextField Margin="Margin.Dense" T="string" Label="E-mail" InputType="InputType.Email" Variant="Variant.Outlined" Class="mx-6 mt-2 mb-2" @bind-Value=ViewModel.RegisterModel.Email />
+                <ValidationMessage For="@(() => ViewModel.RegisterModel.Email)" />
+                <MudTextField Margin="Margin.Dense" T="string" Label="Hasło" InputType="InputType.Password" Variant="Variant.Outlined" Class="mx-6  mt-2 mb-2" @bind-Value=ViewModel.RegisterModel.Password />
+                <ValidationMessage For="@(() => ViewModel.RegisterModel.Password)" />
+                <MudPaper Class="mx-6 my-4" Elevation="0" Style="@($"background-color:{Colors.Grey.Lighten3};")">
+                    <MudText Typo="Typo.body2" Class="pa-2">Hasło musi składać się z co najmniej 8 znaków, w tym z jednej litery, cyfry oraz znaku specjalnego</MudText>
+                </MudPaper>
+
+                <MudText Class="d-flex justify-center" Typo="Typo.body2">Masz już konto? <MudLink Typo="Typo.body2" Class="mx-3" Href="/login">Zaloguj się</MudLink></MudText>
+
+                <MudStack Justify="Justify.SpaceBetween" Class="mx-8 mt-4 mb-4">
+                    <MudButton T="string" Variant="Variant.Filled" Color="Color.Secondary" Class="rounded-pill" ButtonType="ButtonType.Submit">
+                        <MudText Color="Color.Primary" Typo="Typo.button">Załóż konto</MudText>
+                    </MudButton>
+                    <MudButton T="string" Variant="Variant.Text" Href="/" Class="rounded-pill">Wróć</MudButton>
+                </MudStack>
+            </EditForm>
+        </MudPaper>
+    </MudContainer>
+</div>
+
+@code {
+
+}

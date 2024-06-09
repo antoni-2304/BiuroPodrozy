@@ -1,4 +1,5 @@
 using BiuroPodrozy.PortalWWW.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,7 +8,6 @@ namespace BiuroPodrozy.PortalWWW.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -18,12 +18,12 @@ namespace BiuroPodrozy.PortalWWW.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [Authorize]
+        public IActionResult UserDetails()
         {
             return View();
         }
-
-        public IActionResult Search()
+        public IActionResult Privacy()
         {
             return View();
         }

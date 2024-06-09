@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         let carousel = new bootstrap.Carousel(multipleCardCarouselRecommended, {
-            interval: false, // Disable automatic sliding
-            wrap: false, // Prevent wrapping at the end
+            interval: false, 
+            wrap: false, 
         });
         let carousel2 = new bootstrap.Carousel(multipleCardCarouselCountries, {
-            interval: false, // Disable automatic sliding
-            wrap: false, // Prevent wrapping at the end
+            interval: false, 
+            wrap: false, 
         });
 
 
@@ -79,11 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
         cardWidthRecommended = document.querySelector("#recommended-carousel .carousel-item").offsetWidth;
         cardWidthCountries = document.querySelector("#recommended-countries-carousel .carousel-item").offsetWidth;
 
-        cardAmountRecommended = 3;
+        cardAmountRecommended = 0;
         cardAmountCountries = 2;
 
         scrollPositionRecommended = 0;
         scrollPositionCountries = 0;
+
+
         document.querySelector("#recommended-countries-carousel .carousel-control-next").addEventListener("click", function () {
             if (scrollPositionCountries < carouselWidthCountries - cardWidthCountries * cardAmountCountries) {
                 scrollPositionCountries += cardWidthCountries;

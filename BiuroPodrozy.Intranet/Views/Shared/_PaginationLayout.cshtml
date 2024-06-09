@@ -1,0 +1,10 @@
+﻿<nav aria-label="Pagination">
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageCount(); i++)
+        {
+            <li class="page-item">
+                <a asp-action="Index" asp-route-id="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

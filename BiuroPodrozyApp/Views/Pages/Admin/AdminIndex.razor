@@ -1,0 +1,33 @@
+﻿@page "/admin"
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/more"></MudIconButton>
+        </MudItem>
+        <MudItem xs="10" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Dane aplikacji</MudText>
+        </MudItem>
+    </MudGrid>
+    <MudStack Class="my-8">
+        <AuthorizeView>
+            <Authorized>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/admin/currency/list">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Waluty</MudText>
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/admin/language/list">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Języki</MudText>
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/admin/country/list">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Kraje</MudText>
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/admin/city/list">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Miasta</MudText>
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill" Href="/admin/hotel/list">
+                    <MudText Color="Color.Primary" Typo="Typo.button">Hotele</MudText>
+                </MudButton>
+            </Authorized>
+        </AuthorizeView>
+    </MudStack>
+</MudContainer>

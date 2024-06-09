@@ -1,0 +1,46 @@
+﻿@page "/login"
+@layout EmptyLayout
+@inherits MvvmComponentBase<LoginViewModel>
+
+<div style="background-image: url(/Assets/Images/Photos/loginImage.png); margin: 0; padding: 0; background-size:cover; height: 100vh;">
+    <div class="d-flex justify-center">
+        <MudImage Src="Assets/Images/Icons/logo.png" Class="mt-6 mb-6"></MudImage>
+    </div>
+    <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center">
+        <MudPaper Class="mt-8 mb-8 rounded-xl" Outlined="true">
+            <EditForm Model="ViewModel.LoginModel" OnValidSubmit="ViewModel.Submit()" OnInvalidSubmit="ViewModel.Submit()">
+                <DataAnnotationsValidator />
+
+                <MudText Class="d-flex justify-center mt-6 mb-6" Typo="Typo.h5">Zaloguj się</MudText>
+                <MudTextField Margin="Margin.Dense" T="string" Label="E-mail" InputType="InputType.Email" Variant="Variant.Outlined" Class="mx-6 mt-2 mb-2" @bind-Value="ViewModel.LoginModel.Email" />
+                <ValidationMessage For="@(() => ViewModel.LoginModel.Email)" />
+                <MudTextField Margin="Margin.Dense" T="string" Label="Hasło" InputType="InputType.Password" Variant="Variant.Outlined" Class="mx-6 mt-2 mb-2" @bind-Value="ViewModel.LoginModel.Password" />
+                <ValidationMessage For="@(() => ViewModel.LoginModel.Password)" />
+                <MudLink Typo="Typo.body2" Class="mx-6" Href="/">Nie pamiętasz hasła?</MudLink>
+
+                <MudDivider DividerType="DividerType.Middle" Class="mx-6 mt-3 mb-3"></MudDivider>
+
+                <MudText Class="d-flex justify-center" Typo="Typo.body2">Zaloguj się za pomocą innego konta</MudText>
+
+                <MudStack Row="true" Justify="Justify.SpaceEvenly" Class="mx-6 mt-4 mb-4">
+                    <MudIconButton T="string" Icon="@Icons.Custom.Brands.Google" Color="Color.Inherit" Variant="Variant.Filled" Class="rounded-pill"></MudIconButton>
+                    <MudIconButton T="string" Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" Variant="Variant.Filled" Class="rounded-pill"></MudIconButton>
+                    <MudIconButton T="string" Icon="@Icons.Custom.Brands.Twitter" Color="Color.Inherit" Variant="Variant.Filled" Class="rounded-pill"></MudIconButton>
+                </MudStack>
+
+                <MudText Class="d-flex justify-center" Typo="Typo.body2">Nie masz konta? <MudLink Typo="Typo.body2" Class="mx-3" Href="/register"> Zarejestruj się</MudLink></MudText>
+        
+                <MudStack Justify="Justify.SpaceBetween" Class="mx-8 mt-4 mb-4">
+                    <MudButton T="string" Variant="Variant.Filled" Color="Color.Secondary" Class="rounded-pill" ButtonType="ButtonType.Submit">
+                        <MudText Color="Color.Primary" Typo="Typo.button">Zaloguj się</MudText>
+                    </MudButton>
+                    <MudButton T="string" Variant="Variant.Text" Href="/" Class="rounded-pill">Wróć</MudButton>
+                </MudStack>
+            </EditForm>
+        </MudPaper>
+    </MudContainer>
+</div>
+
+@code{
+
+}

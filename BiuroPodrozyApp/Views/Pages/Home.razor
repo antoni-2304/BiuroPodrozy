@@ -1,0 +1,140 @@
+﻿@page "/"
+
+<div class="d-flex justify-center">
+    <MudImage Src="Assets/Images/Icons/logo.png"></MudImage>
+</div>
+
+<MudPaper Class="border-solid border-2 pa-1 my-2" Elevation="0">
+    <MudStack Row="true" AlignItems="AlignItems.Center">
+        <MudIcon Icon="@Icons.Material.Outlined.LocationSearching" Size="Size.Medium" />
+        <MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Primary" FullWidth="true" Class="rounded-pill">
+            <MudText Color="Color.Dark" Typo="Typo.button">Opcje wyszukiwania</MudText>
+        </MudButton>
+    </MudStack>
+</MudPaper>
+
+<MudButton Variant="Variant.Filled" DisableElevation="true" Color="Color.Secondary" FullWidth="true" Class="rounded-pill">
+    <MudText Color="Color.Primary" Typo="Typo.button">Wyszukaj</MudText>
+</MudButton>
+
+<MudCarousel Class="mud-width-full my-5" Style="height: 400px;" AutoCycle="false" ShowBullets="false" TData="MudCard" EnableSwipeGesture="true">
+    <PreviousButtonTemplate>
+        <div Class="mud-button-root mud-icon-button" style="position: relative; bottom: 20px;">
+            <span Class="mud-icon-button-label">
+                <MudIcon Class="mud-icon-button-size-medium" Icon="@Icons.Material.Outlined.ArrowLeft" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </PreviousButtonTemplate>
+    <NextButtonTemplate>
+        <div Class="mud-button-root mud-icon-button" style="position: relative; bottom: 20px;">
+            <span Class="mud-icon-button-label">
+                <MudIcon Class="mud-icon-button-size-medium" Icon="@Icons.Material.Outlined.ArrowRight" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </NextButtonTemplate>
+    <ChildContent>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/example1.png" Class="rounded-t-xl" Height="200"></MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h5">Lorem ipsum</MudText>
+                    <MudText Typo="Typo.body2">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex justify-end">
+                    <MudText Typo="Typo.h5">2000 zł/os</MudText>
+                </MudCardActions>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/example1.png" Class="rounded-t-xl" Height="200"></MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h5">Lorem ipsum</MudText>
+                    <MudText Typo="Typo.body2">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex justify-end">
+                    <MudText Typo="Typo.h5">2000 zł/os</MudText>
+                </MudCardActions>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/example1.png" Class="rounded-t-xl" Height="200"></MudCardMedia>
+                <MudCardContent>
+                    <MudText Typo="Typo.h5">Lorem ipsum</MudText>
+                    <MudText Typo="Typo.body2">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex justify-end">
+                    <MudText Typo="Typo.h5">2000 zł/os</MudText>
+                </MudCardActions>
+            </MudCard>
+        </MudCarouselItem>
+    </ChildContent>
+</MudCarousel>
+
+<MudDivider DividerType="DividerType.FullWidth" Style="height: 2px" />
+<MudBreadcrumbs Items="_items"></MudBreadcrumbs>
+
+<MudButton Variant="Variant.Filled" Dense="true" StartIcon="@Icons.Material.Outlined.Coronavirus" OnClick="@toogleCoronavirusAlert">
+    <MudText Typo="Typo.body1">COVID-19 - najnowsze porady dotyczące podróżowania</MudText>
+    <MudPopover OverflowBehavior="OverflowBehavior.FlipNever" Open="@_coronavirusAlert" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" Class="pa-4 mr-4">
+        <MudPaper Class="pa-1 my-2" Elevation="0" Style="@($"color:{Colors.Grey.Darken1};")">
+            <MudText Typo="Typo.body2">COVID-19 - najnowsze porady dotyczące podróżowania</MudText>
+            <MudText Typo="Typo.body2" Class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare justo quam, quis sagittis neque auctor sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vestibulum justo eu justo pretium scelerisque. Quisque orci mauris, luctus vitae quam vitae, feugiat facilisis tortor.</MudText>
+        </MudPaper>
+    </MudPopover>
+</MudButton>
+
+<MudText Typo="Typo.h5" Class="mt-4">Popularne kierunki</MudText>
+
+<MudCarousel Class="mud-width-full my-5" Style="height: 200px;" AutoCycle="false" ShowBullets="false" TData="MudCard" EnableSwipeGesture="true">
+    <PreviousButtonTemplate>
+        <div Class="mud-button-root mud-icon-button">
+            <span Class="mud-icon-button-label">
+                <MudIcon Class="mud-icon-button-size-medium" Icon="@Icons.Material.Outlined.ArrowLeft" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </PreviousButtonTemplate>
+    <NextButtonTemplate>
+        <div Class="mud-button-root mud-icon-button">
+            <span Class="mud-icon-button-label">
+                <MudIcon Class="mud-icon-button-size-medium" Icon="@Icons.Material.Outlined.ArrowRight" Color="@Color.Inherit" />
+            </span>
+        </div>
+    </NextButtonTemplate>
+    <ChildContent>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/ankara1.jpg" Class="rounded-xl" Height="200" ></MudCardMedia>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/athens1.jpg" Class="rounded-xl" Height="200"></MudCardMedia>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/kair1.jpg" Class="rounded-xl" Height="200"></MudCardMedia>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem>
+            <MudCard Outlined="true" Class="border-solid border-2 mud-border-secondary rounded-xl">
+                <MudCardMedia Image="Assets/Images/Photos/mexico1.jpg" Class="rounded-xl" Height="200"></MudCardMedia>
+            </MudCard>
+        </MudCarouselItem>
+    </ChildContent>
+</MudCarousel>
+
+@code {
+    private bool _coronavirusAlert = false;
+
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    {
+        new BreadcrumbItem("Last minute", href: "#"),
+        new BreadcrumbItem("Wakacje 2024", href: "#"),
+        new BreadcrumbItem("Wycieczki", href: "#")
+    };
+
+    public void toogleCoronavirusAlert() => _coronavirusAlert = _coronavirusAlert == true ? false : true;
+}

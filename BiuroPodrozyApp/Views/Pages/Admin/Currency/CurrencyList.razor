@@ -1,0 +1,47 @@
+﻿@page "/admin/currency/list"
+@inherits MvvmComponentBase<CurrencyViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Waluty</MudText>
+        </MudItem>
+        <MudItem xs="2" Class="d-flex justify-start align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Href="/admin/currency/add"></MudIconButton>
+        </MudItem>
+    </MudGrid>
+    @if (!ViewModel.Models.Any())
+    {
+        <p><em>Loading...</em></p>
+    } else {
+    <MudStack Class="my-8">
+        <AuthorizeView>
+            <Authorized>
+                <MudExpansionPanels>
+                    @foreach (var currency in ViewModel.Models)
+                    {
+                        <MudExpansionPanel Text="@currency.CurrencyName">
+                            <p>Skrót waluty:  @currency.CurrencySymbol</p>
+
+                            <div Class="d-flex justify-end">
+                                <MudButtonGroup Color="Color.Primary" Variant="Variant.Filled" Class="mt-4">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" Href="@($"/admin/currency/edit/{currency.IdCurrency}")"></MudIconButton>
+                                    <MudIconButton Icon="@Icons.Material.Filled.DeleteOutline" Size="Size.Small" Href="@($"/admin/currency/delete/{currency.IdCurrency}")"></MudIconButton>
+                                </MudButtonGroup>
+                            </div>
+                        </MudExpansionPanel>
+                    }
+                </MudExpansionPanels>
+            </Authorized>
+        </AuthorizeView>
+    </MudStack>
+    }
+</MudContainer>
+
+@code {
+
+}

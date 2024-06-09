@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8da1f593-9ee1-41bd-bc02-888e88d5c8fd</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,20 @@
 
   <ItemGroup>
     <PackageReference Include="LibSassBuilder" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BiuroPodrozy.Data\BiuroPodrozy.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\" />
+    <Folder Include="wwwroot\Assets\" />
+  </ItemGroup>
+
 
 </Project>

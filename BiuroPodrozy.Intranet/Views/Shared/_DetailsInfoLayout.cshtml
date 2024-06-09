@@ -1,0 +1,51 @@
+﻿@using BiuroPodrozy.Intranet.ModelsForView
+@model dynamic
+
+<div class="card mt-3">
+    <div class="card-body">
+        <div class="card-title d-flex flex-row justify-content-between">
+            <h5 class="text-center m-0 align-content-center">Informacje o rekordzie</h5>
+            <div>
+                <a asp-action="Index" class="btn btn-outline-dark-blue">Wróć</a>
+                <a asp-action="Edit" asp-route-id="@Model?.ItemId" class="btn btn-dark-blue">Edytuj</a>
+            </div>
+        </div>
+        <div class="card-text">
+            @{
+                switch (Model.ModelName)
+                {
+                    case "Language":
+                        @await Html.PartialAsync("_DetailsInfoLanguages", (DetailsInfoViewModel<BiuroPodrozy.Data.Language>)Model)
+                        ;
+                        break;
+                    case "Currency":
+                        @await Html.PartialAsync("_DetailsInfoCurrencies", (DetailsInfoViewModel<BiuroPodrozy.Data.Currency>)Model)
+                        ;
+                        break;
+                    case "CityDTO":
+                        @await Html.PartialAsync("_DetailsInfoCities", (DetailsInfoViewModel<BiuroPodrozy.Data.CityDTO>)Model)
+                        ;
+                        break;
+                    case "CountryDTO":
+                        @await Html.PartialAsync("_DetailsInfoCountries", (DetailsInfoViewModel<BiuroPodrozy.Data.CountryDTO>)Model)
+                        ;
+                        break;
+                    case "HotelDTO":
+                        @await Html.PartialAsync("_DetailsInfoHotels", (DetailsInfoViewModel<BiuroPodrozy.Data.HotelDTO>)Model)
+                        ;
+                        break;
+                    case "TripDTO":
+                        @await Html.PartialAsync("_DetailsInfoTrips", (DetailsInfoViewModel<BiuroPodrozy.Data.TripDTO>)Model)
+                        ;
+                        break;
+                    case "Page":
+                        @await Html.PartialAsync("_DetailsInfoPages", (DetailsInfoViewModel<BiuroPodrozy.Data.Page>)Model)
+                        ;
+                        break;
+                    default:
+                        break;
+                };
+            }
+        </div>
+    </div>
+</div>

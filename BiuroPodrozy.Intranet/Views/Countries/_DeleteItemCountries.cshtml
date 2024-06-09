@@ -1,0 +1,61 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.DeleteItemViewModel<BiuroPodrozy.Data.CountryDTO>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.CountryName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.CountryName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.AbbrCountryName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.AbbrCountryName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.Continent)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.Continent)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.Population)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.Population)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.CountrySize)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.CountrySize)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.PhoneCode)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.PhoneCode)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.CurrencyName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.CurrencyName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.LanguageName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.LanguageName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.CapitalCityName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.CapitalCityName)
+    </dd>
+</dl>

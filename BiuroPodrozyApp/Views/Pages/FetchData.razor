@@ -1,0 +1,33 @@
+﻿@page "/fetchdata"
+@inherits MvvmComponentBase<FetchDataViewModel>
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (!ViewModel.Currencies.Any())
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewModel.Currencies)
+            {
+                <tr>
+                    <td>@item.IdCurrency</td>
+                    <td>@item.CurrencyName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,88 @@
+﻿@model BiuroPodrozy.Data.Page
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card mt-3">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="card-title d-flex flex-row justify-content-between">
+                <h5 class="text-center m-0 align-content-center">Dodaj nową stronę</h5>
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-dark-blue">Wróć</a>
+                    <input type="submit" asp-action="Create" value="Dodaj" class="btn btn-dark-blue" />
+                </div>
+            </div>
+            <div class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="PageTitle" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="PageTitle" class="form-control" />
+                                <span asp-validation-for="PageTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="NavTitle" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="NavTitle" class="form-control" />
+                                <span asp-validation-for="NavTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="PageIndexRelativeURL" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="PageIndexRelativeURL" class="form-control" />
+                                <span asp-validation-for="PageIndexRelativeURL" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Author" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Author" class="form-control" />
+                                <span asp-validation-for="Author" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="AccessLevel" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select asp-for="AccessLevel" class="form-control" asp-items="ViewBag.AccessLevel"></select>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="IncludeInNavbar" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9 d-flex flex-column justify-content-center">
+                                <div class="form-group form-check">
+                                    <input class="form-check-input" asp-for="IncludeInNavbar" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,4 +1,4 @@
-using BiuroPodrozy.Intranet.Models;
+using BiuroPodrozy.Intranet.ModelsForView;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

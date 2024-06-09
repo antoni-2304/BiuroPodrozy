@@ -1,0 +1,60 @@
+﻿@page "/admin/hotel/edit/{Id:int}"
+@inherits MvvmComponentBase<HotelViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin/hotel/list"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Edytuj hotel</MudText>
+        </MudItem>
+    </MudGrid>
+    <EditForm Model="ViewModel.Model" OnValidSubmit="ViewModel.EditAsync(Id)" OnInvalidSubmit="ViewModel.EditAsync(Id)">
+        <DataAnnotationsValidator />
+        <MudCard Class="mt-8">
+            <MudCardContent>
+                <MudTextField Label="Nazwa hotelu" @bind-Value="ViewModel.Model.HotelName"
+                              For="@(() => ViewModel.Model.HotelName)" />
+                <MudRating Label="Liczba gwiazdek" @bind-SelectedValue="ViewModel.Model.HotelStars"
+                           For="@(() => ViewModel.Model.HotelStars)" />
+                <MudNumericField Min="0" Max="5" Label="Ocena hotelu" @bind-Value="ViewModel.Model.HotelRating"
+                                 For="@(() => ViewModel.Model.HotelRating)" />
+                <MudNumericField Min="0" Label="Cena za pokój" @bind-Value="ViewModel.Model.HotelPricePerUnit"
+                                 For="@(() => ViewModel.Model.HotelPricePerUnit)" />
+                <MudTextField Label="Ulica" @bind-Value="ViewModel.Model.Street"
+                              For="@(() => ViewModel.Model.Street)" />
+                <MudTextField Label="Nr budynku" @bind-Value="ViewModel.Model.HomeNr"
+                              For="@(() => ViewModel.Model.HomeNr)" />
+                <MudSelect T="int" Label="Nazwa miasta" @bind-Value="ViewModel.Model.IdCity" @bind-Text="ViewModel.Model.CityName" OnOpen="ViewModel.LoadCities()" ToStringFunc="ViewModel.GetCitiesText">
+                    @if (ViewModel.Cities.Any())
+                    {
+                        @foreach (var item in ViewModel.Cities)
+                        {
+                            <MudSelectItem T="int" Value="@item.IdCity">@item.CityName</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+                <MudTextField Label="Telefon" @bind-Value="ViewModel.Model.Phone"
+                              For="@(() => ViewModel.Model.Phone)" />
+                <MudTextField Label="E-mail" @bind-Value="ViewModel.Model.Email"
+                              For="@(() => ViewModel.Model.Email)" />
+                <MudDivider />
+                <MudTextField Label="E-mail" @bind-Value="ViewModel.Model.Description"
+                              For="@(() => ViewModel.Model.Description)" Lines="10" MaxLines="10" />
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Edytuj</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+</MudContainer>
+
+@code{
+    [Parameter]
+    public int Id { get; set; }
+    protected override async Task OnInitializedAsync(){
+        await ViewModel.LoadSelects();
+        await ViewModel.LoadItemAsync(Id);
+    }
+}

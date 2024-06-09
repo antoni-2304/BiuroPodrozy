@@ -1,0 +1,61 @@
+﻿@page "/admin/hotel/list"
+@inherits MvvmComponentBase<HotelViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Hotele</MudText>
+        </MudItem>
+        <MudItem xs="2" Class="d-flex justify-start align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Href="/admin/hotel/add"></MudIconButton>
+        </MudItem>
+    </MudGrid>
+    @if (!ViewModel.Models.Any())
+    {
+        <p><em>Loading...</em></p>
+    } else {
+    <MudStack Class="my-8">
+        <AuthorizeView>
+            <Authorized>
+                <MudExpansionPanels>
+                    @foreach (var item in ViewModel.Models)
+                    {
+                            <MudExpansionPanel Text="@item.HotelName">
+                            <p>Liczba gwiazdek:  @item.HotelStars</p>
+                            <p>Ocena hotelu:  @item.HotelRating</p>
+                            <p>Cena za pokój:  @item.HotelPricePerUnit PLN</p>
+                            <MudDivider Class="my-4"/>
+                            <p>Ulica:  @item.Street</p>
+                            <p>Nr budynku:  @item.HomeNr</p>
+                            <p>Nazwa miasta:  @item.CityName</p>
+                            <MudDivider Class="my-4"/>
+                            <p>Telefon:  @item.Phone</p>
+                            <p>E-mail:  @item.Email</p>
+                            <MudExpansionPanels Class="mt-4">
+                                <MudExpansionPanel Text="Opis">
+                                        <p>@item.Description</p>
+                                </MudExpansionPanel>
+                            </MudExpansionPanels>
+
+                            <div Class="d-flex justify-end">
+                                <MudButtonGroup Color="Color.Primary" Variant="Variant.Filled" Class="mt-4">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" Href="@($"/admin/hotel/edit/{item.IdHotel}")"></MudIconButton>
+                                    <MudIconButton Icon="@Icons.Material.Filled.DeleteOutline" Size="Size.Small" Href="@($"/admin/hotel/delete/{item.IdHotel}")"></MudIconButton>
+                                </MudButtonGroup>
+                            </div>
+                        </MudExpansionPanel>
+                    }
+                </MudExpansionPanels>
+            </Authorized>
+        </AuthorizeView>
+    </MudStack>
+    }
+</MudContainer>
+
+@code {
+
+}

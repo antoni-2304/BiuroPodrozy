@@ -1,0 +1,37 @@
+﻿@page "/admin/currency/edit/{Id:int}"
+@inherits MvvmComponentBase<CurrencyViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin/currency/list"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Edytuj walutę</MudText>
+        </MudItem>
+    </MudGrid>
+    <EditForm Model="ViewModel.Model" OnValidSubmit="ViewModel.EditAsync(Id)" OnInvalidSubmit="ViewModel.EditAsync(Id)">
+        <DataAnnotationsValidator />
+        <MudCard Class="mt-8">
+            <MudCardContent>
+                <MudTextField Label="Nazwa waluty" @bind-Value="ViewModel.Model.CurrencyName"
+                              For="@(() => ViewModel.Model.CurrencyName)" />
+                <MudTextField Label="Symbol waluty" @bind-Value="ViewModel.Model.CurrencySymbol"
+                              For="@(() => ViewModel.Model.CurrencySymbol)" />
+                <MudTextField Label="Skrót waluty" @bind-Value="ViewModel.Model.AbbrCurrency"
+                              For="@(() => ViewModel.Model.AbbrCurrency)" />
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Edytuj</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+</MudContainer>
+
+@code{
+    [Parameter]
+    public int Id { get; set; }
+    protected override async Task OnInitializedAsync(){
+        await ViewModel.LoadItemAsync(Id);
+    }
+}

@@ -1,0 +1,113 @@
+﻿@model BiuroPodrozy.Data.TripDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card mt-3">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="card-title d-flex flex-row justify-content-between">
+                <h5 class="text-center m-0 align-content-center">Dodaj nową wycieczkę</h5>
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-dark-blue">Wróć</a>
+                    <input type="submit" asp-action="Create" value="Dodaj" class="btn btn-dark-blue" />
+                </div>
+            </div>
+            <div class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripName" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="TripName" class="form-control" />
+                                <span asp-validation-for="TripName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripCode" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="TripCode" class="form-control" />
+                                <span asp-validation-for="TripCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripCostPerAdult" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="TripCostPerAdult" class="form-control" />
+                                <span asp-validation-for="TripCostPerAdult" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripCostPerChild" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="TripCostPerChild" class="form-control" />
+                                <span asp-validation-for="TripCostPerChild" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripType" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select asp-for="TripType" class="form-control hideShow"  asp-items="ViewBag.TripType"></select>
+                            </div>
+                        </div>
+                        <div id="hideShowDiv" class="form-group row mt-2" style="display: none">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="HotelName" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select asp-for="IdHotel" class="form-control fillHotelsAjax" asp-items="ViewBag.HotelName"></select>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="TripDescription" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea asp-for="TripDescription" class="form-control" ></textarea>
+                                <span asp-validation-for="TripDescription" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="DestinationCityName" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select asp-for="IdDestinationCity" class="form-control fillHotelsByCityAjax" asp-items="ViewBag.IdDestinationCity"></select>
+                            </div>
+                        </div>                       
+                        <hr />
+
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Photos" class="control-label"></label>
+                            </div>
+                            <div class="col-md-8">
+                                <input asp-for="Photos" class="form-control" type="file" name="Photos" accept="image/png, image/jpg" multiple />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/js/changeDivVisibility.js" asp-append-version="true"></script>
+        <script src="~/js/fillHotelsByCityAjax.js" asp-append-version="true"></script>
+    }
+}

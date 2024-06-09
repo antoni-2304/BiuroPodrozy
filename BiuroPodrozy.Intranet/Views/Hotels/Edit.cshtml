@@ -1,0 +1,140 @@
+﻿@model BiuroPodrozy.Data.HotelDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="card mt-3">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div class="card-title d-flex flex-row justify-content-between">
+                <h5 class="text-center m-0 align-content-center">Edytuj wybrany hotel i adres</h5>
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-dark-blue">Wróć</a>
+                    <input type="submit" asp-action="Edit" value="Edytuj" class="btn btn-dark-blue" />
+                </div>
+            </div>
+            <div class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <input asp-for="IdHotel" class="visually-hidden" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="HotelName" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="HotelName" class="form-control" />
+                                <span asp-validation-for="HotelName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="HotelStars" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="HotelStars" class="form-control" />
+                                <span asp-validation-for="HotelStars" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Phone" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Phone" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Email" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="HotelPricePerUnit" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="HotelPricePerUnit" class="form-control" />
+                                <span asp-validation-for="HotelPricePerUnit" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Description" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea asp-for="Description" class="form-control"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Street" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Street" class="form-control" />
+                                <span asp-validation-for="Street" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="HomeNr" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="HomeNr" class="form-control" />
+                                <span asp-validation-for="HomeNr" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="CityName" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select asp-for="IdCity" class="form-control" asp-items="ViewBag.IdCity"></select>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Latitude" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Latitude" class="form-control" />
+                                <span asp-validation-for="Latitude" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <div class="col-md-3 pt-2">
+                                <label asp-for="Longitude" class="control-label"></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input asp-for="Longitude" class="form-control" />
+                                <span asp-validation-for="Longitude" class="text-danger"></span>
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>      
+            <div id="photoGallery">
+                @await Component.InvokeAsync("PhotosGalleryComponent", Model.Photos);
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/js/photoGalleryLogic.js" asp-append-version="true"></script>
+    }
+}

@@ -1,0 +1,20 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.DeleteItemViewModel<BiuroPodrozy.Data.Language>
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.LanguageName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.LanguageName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Item.AbbrLanguageName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Item.AbbrLanguageName)
+    </dd>
+</dl>

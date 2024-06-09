@@ -1,0 +1,48 @@
+﻿@model BiuroPodrozy.Data.Models.RegisterModel
+
+@{
+    Layout = "~/Views/Shared/AuthLayout.cshtml";
+}
+
+<div class=" d-flex justify-content-center align-items-center" style="background-image: url(/Assets/Images/Photos/authImage.png); margin: 0; padding: 0; background-size:cover; background-position: center; background-repeat: no-repeat; height: 100vh; position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;">
+    <div class="fade-in-right card" style="width: 40%; background-color: rgba(245, 245, 245, 0.8);">
+        <div class="card-body">
+            <div class="text-center vstack gap-2">
+                <form asp-action="Register">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="UserName" class="form-label">Nazwa użytkownika</label>
+                        <input asp-for="UserName" class="form-control" id="UserName">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Adres email</label>
+                        <input asp-for="Email" class="form-control" id="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Hasło</label>
+                        <input asp-for="Password" type="password" class="form-control" id="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="RepeatPassword" class="form-label">Powtórz hasło</label>
+                        <input asp-for="RepeatPassword" type="password" class="form-control" id="RepeatPassword">
+                        <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+
+                    </div>
+                    @if (TempData["Logged"] != null && TempData["Logged"].ToString() == "incorrect")
+                    {
+                        <div class="text-danger">Błędne dane. Spróbuj ponownie</div>
+                    }
+                    <input asp-action="Register" type="submit" class="btn btn-yellow fw-bold" value="Zarejestruj się">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

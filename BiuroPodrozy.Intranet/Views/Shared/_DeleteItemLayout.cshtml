@@ -1,0 +1,56 @@
+﻿@using BiuroPodrozy.Intranet.ModelsForView
+@model dynamic
+
+<div class="card mt-3">
+    <div class="card-body">
+        <form asp-action="Delete">
+            <div class="card-title d-flex flex-row justify-content-between">
+                <h5 class="text-center m-0 align-content-center">Czy na pewno chcesz usunąć ten rekord?</h5>
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-dark-blue">Wróć</a>
+                    <input type="submit" value="Usuń" class="btn btn-danger" />
+                </div>
+            </div>
+            <div>
+                <hr />
+                @{
+                    switch (Model.ModelName)
+                    {
+                        case "Language":
+                            @await Html.PartialAsync("_DeleteItemLanguages", (DeleteItemViewModel<BiuroPodrozy.Data.Language>)Model)
+                            ;
+                            break;
+                        case "Currency":
+                            @await Html.PartialAsync("_DeleteItemCurrencies", (DeleteItemViewModel<BiuroPodrozy.Data.Currency>)Model)
+                            ;
+                            break;
+                        case "CityDTO":
+                            @await Html.PartialAsync("_DeleteItemCities", (DeleteItemViewModel<BiuroPodrozy.Data.CityDTO>)Model)
+                            ;
+                            break;
+                        case "CountryDTO":
+                            @await Html.PartialAsync("_DeleteItemCountries", (DeleteItemViewModel<BiuroPodrozy.Data.CountryDTO>)Model)
+                            ;
+                            break;
+                        case "HotelDTO":
+                            @await Html.PartialAsync("_DeleteItemHotels", (DeleteItemViewModel<BiuroPodrozy.Data.HotelDTO>)Model)
+                            ;
+                            break;
+                        case "TripDTO":
+                            @await Html.PartialAsync("_DeleteItemTrips", (DeleteItemViewModel<BiuroPodrozy.Data.TripDTO>)Model)
+                            ;
+                            break;
+
+                        case "Page":
+                            @await Html.PartialAsync("_DeleteItemPages", (DeleteItemViewModel<BiuroPodrozy.Data.Page>)Model)
+                            ;
+                            break;
+                        default:
+                            break;
+                    };
+                }
+                <hr />
+            </div>
+        </form>
+    </div>
+</div>

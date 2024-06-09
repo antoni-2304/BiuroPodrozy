@@ -1,0 +1,32 @@
+﻿@page "/admin/hotel/delete/{Id:int}"
+@inherits MvvmComponentBase<HotelViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin/hotel/list"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Usuń hotel</MudText>
+        </MudItem>
+    </MudGrid>
+    <EditForm Model="ViewModel.Model" OnValidSubmit="ViewModel.DeleteAsync(Id)" OnInvalidSubmit="ViewModel.DeleteAsync(Id)">
+        <MudCard Class="mt-8">
+            <MudCardContent>
+                <MudText Typo="Typo.h6">Czy na pewno chcesz usunać rekord</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" Href="/admin/city/list">Wróć</MudButton>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Usuń</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+</MudContainer>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.LoadItemAsync(Id);
+    }
+}

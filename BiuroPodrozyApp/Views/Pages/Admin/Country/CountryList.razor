@@ -1,0 +1,54 @@
+﻿@page "/admin/country/list"
+@inherits MvvmComponentBase<CountryViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Kraje</MudText>
+        </MudItem>
+        <MudItem xs="2" Class="d-flex justify-start align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.Add" Href="/admin/country/add"></MudIconButton>
+        </MudItem>
+    </MudGrid>
+    @if (!ViewModel.Models.Any())
+    {
+        <p><em>Loading...</em></p>
+    } else {
+    <MudStack Class="my-8">
+        <AuthorizeView>
+            <Authorized>
+                <MudExpansionPanels>
+                    @foreach (var item in ViewModel.Models)
+                    {
+                            <MudExpansionPanel Text="@item.CountryName">
+                            <p>Skrót nazwy kraju:  @item.AbbrCountryName</p>
+                            <p>Kontynent:  @item.Continent</p>
+                            <p>Populacja:  @item.Population</p>
+                            <p>Wielkość kraju:  @item.CountrySize</p>
+                            <p>Nr kierunkowy:  @item.PhoneCode</p>
+                            <p>Główna waluta:  @item.CurrencyName</p>
+                            <p>Główny język:  @item.LanguageName</p>
+                            <p>Stolica:  @item.CapitalCityName</p>
+
+                            <div Class="d-flex justify-end">
+                                <MudButtonGroup Color="Color.Primary" Variant="Variant.Filled" Class="mt-4">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" Href="@($"/admin/country/edit/{item.IdCountry}")"></MudIconButton>
+                                    <MudIconButton Icon="@Icons.Material.Filled.DeleteOutline" Size="Size.Small" Href="@($"/admin/country/delete/{item.IdCountry}")"></MudIconButton>
+                                </MudButtonGroup>
+                            </div>
+                        </MudExpansionPanel>
+                    }
+                </MudExpansionPanels>
+            </Authorized>
+        </AuthorizeView>
+    </MudStack>
+    }
+</MudContainer>
+
+@code {
+
+}

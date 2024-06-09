@@ -1,0 +1,47 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.DetailsInfoViewModel<BiuroPodrozy.Data.Page>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Strona - Szczegóły</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.PageTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.PageTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.NavTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.NavTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.PageIndexRelativeURL)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.PageIndexRelativeURL)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.AccessLevel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.AccessLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.IncludeInNavbar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.IncludeInNavbar)
+        </dd>
+    </dl>
+</div>

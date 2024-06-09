@@ -1,0 +1,38 @@
+﻿@page "/weather"
+@layout EmptyLayout
+@inherits MvvmComponentBase<WeatherViewModel>
+
+<div style="background-image: url(/Assets/Images/Photos/weatherImage.png); margin: 0; padding: 0; background-size:cover; height: 100vh;">
+    <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center">
+        <MudPaper Class="mt-8 mb-8 rounded-xl" Outlined="true" >
+            <MudGrid>
+                <MudItem xs="2" Class="d-flex justify-center align-center">
+                    <MudIconButton Class="mud-width-full my-4" Color="Color.Secondary" Icon="@Icons.Material.Filled.ArrowBack" Href="/more"></MudIconButton>
+                </MudItem>
+                <MudItem xs="8" Class="d-flex justify-start align-center">
+                    <MudSelect T="int?" Label="Wybierz miasto" Variant="Variant.Outlined" OnOpen="ViewModel.LoadCities()" ToStringFunc="ViewModel.GetCityText">
+                        @if (ViewModel.Cities.Any())
+                        {
+                            @foreach (var item in ViewModel.Cities)
+                            {
+                                <MudSelectItem T="int?" Value="@item.IdCity">@item.CityName</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+                </MudItem>
+                <MudItem xs="2" Class="d-flex justify-center align-center">
+                    <MudIconButton Class="mud-width-full my-4" Color="Color.Secondary" Icon="@Icons.Material.Filled.Search" OnClick="ViewModel.LoadWeather()"></MudIconButton>
+                </MudItem>
+                @if (ViewModel.WeatherData != null)
+                {
+                    <MudText Class="text-center" Typo="Typo.h6">Dane pogodowe</MudText>
+                    <MudText Class="text-center" Typo="Typo.h6">@ViewModel.WeatherData.Weather[0].Description</MudText>
+                }
+            </MudGrid>
+        </MudPaper>
+            
+    </MudContainer>
+</div>
+
+@code{
+}

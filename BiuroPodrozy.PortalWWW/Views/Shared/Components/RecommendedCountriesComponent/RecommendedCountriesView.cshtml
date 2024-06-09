@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BiuroPodrozy.Data.CountryDTO>
+
+<div id="recommended-countries-bar">
+	<div class="container-fluid w-90">
+		<div class="row pt-5 pb-5">
+			<div class="col-12 display-6 text-start">Popularne kierunki podróży</div>
+		</div>
+		<div class="row pb-5">
+			<div id="recommended-countries-carousel" class="carousel">
+				<div class="carousel-inner">
+					@foreach(var item in Model)
+					{
+						<div class="carousel-item active">
+							<div class="card border-0" id="offerCard">
+								<img src="~/Assets/Images/@(item.Photos.FirstOrDefault("Photos/overlayBlog.png"))" class="card-img img-fluid" style="border-radius: 20px; height: 300px; width: auto; object-fit: cover" alt="...">
+								<div class="card-img-overlay d-flex flex-column align-content-end justify-content-end">
+									<div class="card-text bg-yellow opacity-75 border-3 rounded-3">
+										<div class="fw-bolder my-2">@item.CountryName</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					}	
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#recommended-countries-carousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#recommended-countries-carousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="false"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

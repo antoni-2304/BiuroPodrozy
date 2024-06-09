@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/AuthLayout.cshtml";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="background-image: url(/Assets/Images/Photos/authImage.png); margin: 0; padding: 0; background-size:cover; background-position: center; background-repeat: no-repeat; height: 100vh; position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;">
+    <div class="fadeCard card" style="width: 40%; background-color: rgba(245, 245, 245, 0.4);">
+        <div class="card-body">
+            <div class="text-center vstack gap-4">
+                <button type="button" id="loginButton" class="fadeButton fadeButtonLeft btn btn-yellow btn-lg opacity-100 fw-bold" data-target="@Url.Action("LoginView", "Auth")">Chcę się zalogować</button>
+                <button type="button" id="registerButton" class="fadeButton fadeButtonLeft btn btn-yellow btn-lg opacity-100 fw-bold" data-target="@Url.Action("RegisterView", "Auth")">Chcę się zarejestrować</button>
+                <button type="button" id="contactButton" class="fadeButton fadeButtonRight btn btn-yellow btn-lg opacity-100 fw-bold" data-target="@Url.Action("Index", "Home")">Chcę się skontaktować</button>
+            </div>
+        </div>
+    </div>
+</div>
+

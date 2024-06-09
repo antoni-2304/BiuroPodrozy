@@ -1,0 +1,49 @@
+﻿@inherits BiuroPodrozyTheme
+
+<MudThemeProvider Theme="BiuroPodrozyTheme.Theme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<CascadingAuthenticationState>
+<MudLayout>
+    <MudAppBar Elevation="0" Bottom="true" Style="background-color: #FFFFFF; border-top: 3px solid #e0e0e0; border-radius: 10px" Class="pt-3">
+        <MudSpacer />
+        <MudButton >
+            <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                <MudIcon Icon="@Icons.Material.Outlined.Search" Color="Color.Primary" Size="Size.Medium"/>
+                <MudText Typo="Typo.caption">Promocje</MudText>
+            </MudStack>
+        </MudButton>
+        <MudSpacer />
+        <MudButton>
+            <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                <MudIcon Icon="@Icons.Material.Outlined.Bookmark" Color="Color.Primary" Size="Size.Medium" />
+                <MudText Typo="Typo.caption">Rezerwacje</MudText>
+            </MudStack>
+        </MudButton>
+        <MudSpacer />
+        <MudButton>
+            <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                <MudIcon Icon="@Icons.Material.Outlined.Favorite" Color="Color.Primary" Size="Size.Medium"/>
+                <MudText Typo="Typo.caption">Ulubione</MudText>
+            </MudStack>
+        </MudButton>
+        <MudSpacer />
+        <MudButton Href="/more" IconColor="Color.Primary">
+            <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                <MudIcon Icon="@Icons.Material.Filled.MoreHoriz" Color="Color.Primary" Size="Size.Medium"></MudIcon>
+                <MudText Typo="Typo.caption">Więcej</MudText>
+            </MudStack>
+        </MudButton>
+        <MudSpacer /> 
+        @* <div class="nav-item px-3">
+            <MudButton class="nav-link" Href="/fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </MudButton>
+        </div> *@
+    </MudAppBar>
+    <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge" Style="margin-bottom: 150px;">
+        @Body
+    </MudContainer>
+</MudLayout>
+</CascadingAuthenticationState>

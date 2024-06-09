@@ -1,0 +1,14 @@
+﻿@model ICollection<BiuroPodrozy.Data.Page>
+
+<ul class="navbar-nav me-auto mb-2 mb-md-0">
+	@foreach (var item in Model)
+	{
+		@if (item.IncludeInNavbar)
+		{
+			var controllerAction = item.PageIndexRelativeURL.ToString().Split("/");
+			<li class="nav-item me-3">
+				<a class="nav-link text-dark" asp-area="" asp-controller="@controllerAction[0].ToString()" asp-action="@controllerAction[1].ToString()">@item.NavTitle</a>
+			</li>
+		}
+	}
+</ul>

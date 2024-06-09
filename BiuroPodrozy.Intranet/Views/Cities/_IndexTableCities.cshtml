@@ -1,0 +1,65 @@
+﻿@model BiuroPodrozy.Intranet.ModelsForView.IndexTableViewModel<BiuroPodrozy.Data.CityDTO>
+
+@{
+    var index = (Model.CurrentPage - 1) * Model.ItemsPerPage;
+    var dummy = Model.Items.FirstOrDefault();
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => dummy.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => dummy.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => dummy.Population)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => dummy.CountryName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PaginatedItems())
+        {
+            <tr>
+                <td>
+                    @(++index)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Population)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryName)
+                </td>
+                <td class="text-end">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Button Group">
+                        <a asp-action="Edit" class="btn btn-dark-blue" asp-route-id="@item.IdCity">
+                            <i class="bi-pencil"></i>
+                        </a>
+                        <a asp-action="Details" class="btn btn-dark-blue" asp-route-id="@item.IdCity">
+                            <i class="bi-search"></i>
+                        </a>
+                        <a asp-action="Delete" class="btn btn-dark-blue" asp-route-id="@item.IdCity">
+                            <i class="bi-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@await Html.PartialAsync("_PaginationLayout", Model)

@@ -1,0 +1,62 @@
+﻿@page "/info"
+@layout EmptyLayout
+
+<MudGrid>
+    <MudItem xs="2" Class="d-flex justify-center align-center">
+        <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/more"></MudIconButton>
+    </MudItem>
+    <MudItem xs="10" Class="d-flex justify-start align-center">
+        <MudText Typo="Typo.h6">Informacje</MudText>
+    </MudItem>
+</MudGrid>
+
+
+<div class="mx-2 my-3" style="background-image: url(/Assets/Images/Photos/contactImage1.jpg); margin: 0; padding: 0; background-size: 100% 100%; background-repeat: no-repeat; ">
+    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+        <MudText Typo="Typo.h5" Class="my-3">Dane kontaktowe</MudText>
+        <MudGrid Class="my-2 px-2">
+            <MudItem xs="3">
+                <MudText Typo="Typo.body1">Telefon:</MudText>
+            </MudItem>
+            <MudItem xs="9">
+                <MudText Typo="Typo.body1"><b>+48 123 456 789</b></MudText>
+            </MudItem>
+            <MudItem xs="3">
+                <MudText Typo="Typo.body1">E-mail:</MudText>
+            </MudItem>
+            <MudItem xs="9">
+                <MudText Typo="Typo.body1" ><b>abx@xyz.com</b></MudText>
+            </MudItem>
+            <MudItem xs="3">
+                <MudText Typo="Typo.body1" >Godziny:</MudText>
+            </MudItem>
+            <MudItem xs="9">
+                <MudText Typo="Typo.body1" ><b>Pon-Sob: 8:00 - 17:00</b></MudText>
+            </MudItem>
+            <MudItem xs="3">
+                <MudText Typo="Typo.body1" >Adres:</MudText>
+            </MudItem>
+            <MudItem xs="9">
+                <MudText Typo="Typo.body1" ><b>ul. Górna 95, 71-218 Szczecin</b></MudText>
+            </MudItem>
+        </MudGrid>
+    </MudStack>
+</div>
+
+<div class="mx-2 my-3" style="background-image: url(/Assets/Images/Photos/contactImage2.jpg); margin: 0; padding: 0; background-size: 100% 100%; background-repeat: no-repeat;">
+    <MudStack AlignItems="AlignItems.Center">
+        <MudText Typo="Typo.h5" Class="my-3">Skontaktuj się z nami</MudText>
+        <MudForm Class="my-2">
+            <MudTextField T="string" Label="Adres e-mail" FullWidth="true" ></MudTextField>
+            <MudTextField T="string" Label="Temat wiadomości" FullWidth="true"></MudTextField>
+            <MudTextField T="string" Label="Treść wiadomości" FullWidth="true" AutoGrow="true" Lines="4" MaxLines="4"></MudTextField>
+            <MudStack Class="d-flex justify-content-end">
+                <MudText Typo="Typo.caption">Pola oznaczone * sa wymagane</MudText>
+            </MudStack>
+            <MudButton  ButtonType="ButtonType.Submit" Color="Color.Secondary" Variant="Variant.Filled" Class="mt-3" Disabled="true">Wyslij wiadomość</MudButton>
+        </MudForm>
+    </MudStack>
+</div>
+@code {
+
+}

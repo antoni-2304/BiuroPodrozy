@@ -1,0 +1,75 @@
+﻿@page "/admin/country/edit/{Id:int}"
+@inherits MvvmComponentBase<CountryViewModel>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudGrid>
+        <MudItem xs="2" Class="d-flex justify-center align-center">
+            <MudIconButton Color="Color.Primary" Icon="@Icons.Material.Filled.ArrowBack" Href="/admin/country/list"></MudIconButton>
+        </MudItem>
+        <MudItem xs="8" Class="d-flex justify-start align-center">
+            <MudText Typo="Typo.h6">Edytuj kraj</MudText>
+        </MudItem>
+    </MudGrid>
+    <EditForm Model="ViewModel.Model" OnValidSubmit="ViewModel.EditAsync(Id)" OnInvalidSubmit="ViewModel.EditAsync(Id)">
+        <DataAnnotationsValidator />
+        <MudCard Class="mt-8">
+            <MudCardContent>
+                <MudTextField Label="Nazwa kraju" @bind-Value="ViewModel.Model.CountryName"
+                              For="@(() => ViewModel.Model.CountryName)" />
+                <MudTextField Label="Skrót kraju" @bind-Value="ViewModel.Model.AbbrCountryName"
+                              For="@(() => ViewModel.Model.AbbrCountryName)" />
+                <MudSelect T="string" Label="Kontynent" @bind-Value="ViewModel.Model.Continent">
+                    @foreach (var item in ViewModel.Continents)
+                    {
+                        <MudSelectItem Value="@item.Value">@item.Text</MudSelectItem>
+                    }
+                </MudSelect>
+                <MudNumericField Label="Populacja" @bind-Value="ViewModel.Model.Population"
+                                 For="@(() => ViewModel.Model.Population)" />
+                <MudNumericField Label="Wielkość kraju" @bind-Value="ViewModel.Model.CountrySize"
+                                 For="@(() => ViewModel.Model.CountrySize)" />
+                <MudNumericField Label="Nr kierunkowy" @bind-Value="ViewModel.Model.PhoneCode"
+                                 For="@(() => ViewModel.Model.PhoneCode)" />
+                <MudSelect T="int" Label="Główna waluta" @bind-Value="ViewModel.Model.IdCurrency" @bind-Text="ViewModel.Model.CurrencyName" OnOpen="ViewModel.LoadCurrencies()" ToStringFunc="ViewModel.GetCurrencyText">
+                    @if (ViewModel.Currencies.Any())
+                    {    
+                        @foreach (var item in ViewModel.Currencies)
+                        {
+                            <MudSelectItem T="int" Value="@item.IdCurrency">@item.CurrencyName</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+                <MudSelect T="int" Label="Główny język" @bind-Value="ViewModel.Model.IdLanguage" @bind-Text="ViewModel.Model.LanguageName" OnOpen="ViewModel.LoadLanguages()" ToStringFunc="ViewModel.GetLanguageText">
+                    @if (ViewModel.Languages.Any())
+                    {
+                        @foreach (var item in ViewModel.Languages)
+                        {
+                            <MudSelectItem T="int" Value="@item.IdLanguage">@item.LanguageName</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+                <MudSelect T="int?" Label="Stolica" @bind-Value="ViewModel.Model.IdCapitalCity" @bind-Text="ViewModel.Model.CapitalCityName" OnOpen="ViewModel.LoadCities()" ToStringFunc="ViewModel.GetCityText">
+                    @if (ViewModel.Cities.Any())
+                    {
+                        @foreach (var item in ViewModel.Cities)
+                        {
+                            <MudSelectItem T="int?" Value="@item.IdCity">@item.CityName</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Edytuj</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+</MudContainer>
+
+@code{
+    [Parameter]
+    public int Id { get; set; }
+    protected override async Task OnInitializedAsync(){
+        await ViewModel.LoadSelects();
+        await ViewModel.LoadItemAsync(Id);
+    }
+}
