@@ -16,7 +16,7 @@ namespace BiuroPodrozy.Data.Services.ServicesImplementation
         public async Task<WeatherData> GetWeatherAsync(string city)
         {
             string baseUrl = "https://api.openweathermap.org/data/2.5/forecast";
-            string apiKey = "3aacf7549d4954711299501e488b45da";
+            string apiKey = "";
             string url = $"{baseUrl}?q={city}&appid={apiKey}";
 
             using var response = await new HttpClient().GetAsync(url);
