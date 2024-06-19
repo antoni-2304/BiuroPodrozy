@@ -11,7 +11,7 @@
         <MudPaper Class="mt-8 mb-8 rounded-xl" Outlined="true">
             <EditForm Model="ViewModel.RegisterModel" OnValidSubmit="ViewModel.Submit()" OnInvalidSubmit="ViewModel.Submit()">
                 <MudText Class="d-flex justify-center mt-6 mb-6" Typo="Typo.h5">Zarejestruj się</MudText>
-                <MudTextField Margin="Margin.Dense" T="string" Label="E-mail" InputType="InputType.Email" Variant="Variant.Outlined" Class="mx-6 mt-2 mb-2" @bind-Value=ViewModel.RegisterModel.Email />
+                <MudTextField Margin="Margin.Dense" T="string" Label="Email" InputType="InputType.Email" Variant="Variant.Outlined" Class="mx-6 mt-2 mb-2" @bind-Value=ViewModel.RegisterModel.Email />
                 <ValidationMessage For="@(() => ViewModel.RegisterModel.Email)" />
                 <MudTextField Margin="Margin.Dense" T="string" Label="Hasło" InputType="InputType.Password" Variant="Variant.Outlined" Class="mx-6  mt-2 mb-2" @bind-Value=ViewModel.RegisterModel.Password />
                 <ValidationMessage For="@(() => ViewModel.RegisterModel.Password)" />

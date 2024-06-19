@@ -41,11 +41,14 @@
                                 </a>
                             </li>
 						}
+						@if (!User.Identity.IsAuthenticated)
+						{
 						<li class="nav-item me-4">
 							<a class="nav-brand" asp-area="" asp-controller="Home" asp-action="UserDetails">
 								<i class="bi bi-person-fill"></i>
 							</a>
 						</li>
+						}
 					</ul>
 				</div>            
 			</div>

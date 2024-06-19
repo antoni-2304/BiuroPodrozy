@@ -8,12 +8,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
     <Compile Remove="Images\**" />
     <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="bin\**" />
     <EmbeddedResource Remove="Images\**" />
     <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="bin\**" />
     <None Remove="Images\**" />
     <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net8.0\BiuroPodrozy.Data.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\BiuroPodrozy.Data.GlobalUsings.g.cs" />
+    <Compile Include="obj\swaggerClient.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\BiuroPodrozy.Data.csproj.nuget.dgspec.json" />
+    <Content Include="obj\Debug\net8.0\BiuroPodrozy.Data.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\BiuroPodrozy.Data.sourcelink.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\BiuroPodrozy.Data.csproj.nuget.g.props" />
+    <None Include="obj\BiuroPodrozy.Data.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.assets.cache" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.dll" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net8.0\BiuroPodrozy.Data.pdb" />
+    <None Include="obj\Debug\net8.0\refint\BiuroPodrozy.Data.dll" />
+    <None Include="obj\Debug\net8.0\ref\BiuroPodrozy.Data.dll" />
+    <None Include="obj\project.nuget.cache" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +76,10 @@
     <OpenApiReference Include="OpenAPIs\swagger.json" CodeGenerator="NSwagCSharp" ClassName="ReferenceAPI">
       <SourceUri>https://localhost:7232/swagger/v1/swagger.json</SourceUri>
     </OpenApiReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

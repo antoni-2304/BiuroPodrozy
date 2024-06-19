@@ -27,6 +27,7 @@ namespace BiuroPodrozyApp
             builder.Services.AddMvvmNavigation();
             builder.Services.AddSingleton<IConnectToAPI, ConnectToAPI>();
             builder.Services.AddSingleton<IAllowedValuesService, AllowedValuesService>();
+            builder.Services.AddSingleton<WeatherService, WeatherService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<CustomAuthenticationStateProvider, CustomAuthenticationStateProvider>();
             builder.Services.AddScoped<AuthenticationStateProvider>(p => p.GetService<CustomAuthenticationStateProvider>());

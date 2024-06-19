@@ -1,0 +1,37 @@
+﻿@using BiuroPodrozy.Data.Services.ServicesImplementation
+@model BiuroPodrozy.Data.Models.WeatherData
+@inject WeatherService WeatherService
+
+@if (Model != null)
+{
+    <div class="card-title text-start fw-bolder">Prognoza pogody na następne 5 dni</div>
+    @foreach (var item in Model.list)
+    {
+        @if (item.dt_txt.Hour == 12)
+        {
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <div class="avatar me-3">
+                        <img width="50" height="50" src="@WeatherService.GetWeatherIcon(item.weather[0].icon)" alt="Weather Icon">
+                    </div>
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <div>
+                                    <p class="mb-0">@item.weather[0].main</p>
+                                    <p class="mb-0 text-muted">@Model.city.name</p>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <div>
+                                    <p class="mb-0">@WeatherService.ConvertToC(item.main.temp)</p>
+                                    <p class="mb-0 text-muted">@item.dt_txt.ToShortDateString()</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}

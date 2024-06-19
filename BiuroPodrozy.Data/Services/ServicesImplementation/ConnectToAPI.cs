@@ -1,21 +1,22 @@
 ﻿using BiuroPodrozy.Data.Services.IServices;
+using System.Net.Http;
 
 namespace BiuroPodrozy.Data.Services.ServicesImplementation
 {
-	public class ConnectToAPI : IConnectToAPI
-	{
-		public ReferenceAPI Connect()
-		{
-			var httpHandler = new HttpClientHandler();
+    public class ConnectToAPI : IConnectToAPI
+    {
+        public ReferenceAPI Connect()
+        {
+            var httpHandler = new HttpClientHandler();
 #if DEBUG
-			httpHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
-			httpHandler.ServerCertificateCustomValidationCallback =
-			(httpRequestMessage, cert, cetChain, policyErrors) => true;
+            httpHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
+            httpHandler.ServerCertificateCustomValidationCallback =
+            (httpRequestMessage, cert, cetChain, policyErrors) => true;
 #endif
-			var httpclient = new HttpClient(httpHandler);
-			return new ReferenceAPI("https://localhost:7232", httpclient);
+            var httpclient = new HttpClient(httpHandler);
+            return new ReferenceAPI("https://localhost:7232", httpclient);
 
-		}
+        }
 
-	}
+    }
 }

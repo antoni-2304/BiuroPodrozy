@@ -38,7 +38,7 @@ namespace BiuroPodrozyAPI.Controllers
         {
             var newUser = new User
             {
-                UserName = user.UserName,
+                UserName = user.Email,
                 Email = user.Email
             };
 

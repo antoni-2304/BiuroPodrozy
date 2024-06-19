@@ -34,7 +34,12 @@
                         {
                             <img src="~/Assets/Images/@photo" class="img-thumbnail w-25" alt="...">
                         }
-                    </div>                  
+                    </div>    
+                    <div class="col-md-4">
+                        @if (User.Identity.IsAuthenticated){
+                            @await Component.InvokeAsync("WeatherCardComponent", Model.City)
+                        }
+                    </div>
                 </div>
             </div>
 
